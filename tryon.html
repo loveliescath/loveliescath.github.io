@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>For Sea ♡</title>
+
+    <link rel="stylesheet" href="birthday.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- MUSIC -->
+
+    <audio id="music" loop>
+        <source src="dewi.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- BACKGROUND -->
+
+    <div class="background">
+
+        <div class="stars">
+            <span>✦</span>
+            <span>✧</span>
+            <span>·</span>
+            <span>✦</span>
+            <span>·</span>
+            <span>✧</span>
+            <span>·</span>
+            <span>✦</span>
+        </div>
+
+
+        <!-- FLOATING HEARTS -->
+
+        <div class="heart h1">♥</div>
+        <div class="heart h2">♥</div>
+        <div class="heart h3">♥</div>
+        <div class="heart h4">♥</div>
+        <div class="heart h5">♥</div>
+
+
+        <!-- FLOWERS -->
+
+        <div class="flower flower-left">
+
+            <div class="hydrangea">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="stem"></div>
+
+        </div>
+
+
+        <div class="flower flower-center">
+
+            <div class="hydrangea">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="stem"></div>
+
+        </div>
+
+
+        <div class="flower flower-right">
+
+            <div class="hydrangea">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="stem"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MESSAGE -->
+
+    <div class="message">
+
+        <h1>
+            For the person who makes
+            ordinary days feel special.
+        </h1>
+
+        <p>
+            I hope this little garden reminds you
+            that there will always be something
+            beautiful waiting to bloom.
+        </p>
+
+    </div>
+
+
+    <script>
+
+        const music =
+            document.getElementById("music");
+
+        /*
+         * Dewi - Alexa
+         * Start from 02:10
+         */
+
+        music.currentTime = 130;
+
+        music.play().catch(() => {
+            console.log(
+                "Music will start after user interaction."
+            );
+        });
+
+    </script>
+
+
+</body>
+
+</html>
