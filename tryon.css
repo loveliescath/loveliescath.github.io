@@ -1,0 +1,500 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    background: #020712;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    position: relative;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 55%,
+            #081a35 0%,
+            #030914 45%,
+            #01040a 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars span {
+    position: absolute;
+
+    color: #769bd2;
+
+    font-size: 12px;
+
+    animation: twinkle 3s infinite alternate;
+}
+
+.stars span:nth-child(1) {
+    top: 12%;
+    left: 12%;
+}
+
+.stars span:nth-child(2) {
+    top: 22%;
+    left: 27%;
+
+    animation-delay: .8s;
+}
+
+.stars span:nth-child(3) {
+    top: 14%;
+    right: 25%;
+
+    animation-delay: 1.2s;
+}
+
+.stars span:nth-child(4) {
+    top: 31%;
+    right: 12%;
+
+    animation-delay: .4s;
+}
+
+.stars span:nth-child(5) {
+    top: 42%;
+    left: 17%;
+
+    animation-delay: 1.7s;
+}
+
+.stars span:nth-child(6) {
+    top: 38%;
+    right: 32%;
+
+    animation-delay: 2s;
+}
+
+.stars span:nth-child(7) {
+    top: 8%;
+    left: 50%;
+
+    animation-delay: .5s;
+}
+
+.stars span:nth-child(8) {
+    top: 28%;
+    left: 65%;
+
+    animation-delay: 1.5s;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: .15;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: .9;
+        transform: scale(1.3);
+    }
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+.heart {
+    position: absolute;
+
+    color: #284a82;
+
+    z-index: 10;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.h1 {
+    top: 19%;
+    left: 11%;
+    font-size: 35px;
+}
+
+.h2 {
+    top: 12%;
+    right: 17%;
+    font-size: 25px;
+    animation-delay: 1s;
+}
+
+.h3 {
+    top: 42%;
+    left: 24%;
+    font-size: 19px;
+    animation-delay: 1.5s;
+}
+
+.h4 {
+    top: 38%;
+    right: 24%;
+    font-size: 23px;
+    animation-delay: 2s;
+}
+
+.h5 {
+    top: 52%;
+    left: 48%;
+    font-size: 18px;
+    animation-delay: 2.5s;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: .55;
+    }
+
+    50% {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    position: absolute;
+
+    top: 10%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 650px;
+
+    text-align: center;
+
+    z-index: 20;
+
+    animation: messageAppear 2s ease;
+}
+
+.message h1 {
+    color: #79a2df;
+
+    font-size: clamp(22px, 3vw, 32px);
+
+    font-weight: normal;
+
+    line-height: 1.5;
+
+    margin-bottom: 18px;
+}
+
+.message p {
+    color: #5879a8;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    font-weight: normal;
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+/* =========================
+   FLOWERS
+========================= */
+
+.flower {
+    position: absolute;
+
+    bottom: -10px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    animation: flowerSway 5s ease-in-out infinite;
+}
+
+.flower-left {
+    left: 19%;
+
+    transform: scale(.72);
+}
+
+.flower-center {
+    left: 50%;
+
+    transform: translateX(-50%) scale(1);
+
+    z-index: 7;
+}
+
+.flower-right {
+    right: 19%;
+
+    transform: scale(.72);
+
+    animation-delay: 1s;
+}
+
+
+/* =========================
+   STEM
+========================= */
+
+.stem {
+    width: 8px;
+
+    height: 240px;
+
+    background:
+        linear-gradient(
+            to right,
+            #0b2c27,
+            #23594c,
+            #0b2c27
+        );
+
+    border-radius: 20px;
+
+    transform-origin: bottom;
+
+    animation: grow 2.2s ease forwards;
+}
+
+.flower-left .stem,
+.flower-right .stem {
+    height: 200px;
+}
+
+@keyframes grow {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+
+/* =========================
+   HYDRANGEA
+========================= */
+
+.hydrangea {
+    position: absolute;
+
+    bottom: 220px;
+
+    width: 230px;
+
+    height: 190px;
+
+    opacity: 0;
+
+    transform: scale(0);
+
+    animation: bloom 1.8s ease forwards;
+
+    animation-delay: 2s;
+}
+
+
+/* FLOWER PETALS */
+
+.hydrangea span {
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 48% 52% 48% 52%;
+
+    background: #82aef0;
+
+    box-shadow:
+        inset 3px 3px 8px rgba(255,255,255,.15),
+        0 0 12px rgba(72,117,190,.2);
+}
+
+
+/* PETAL POSITIONS */
+
+.hydrangea span:nth-child(1) {
+    top: 0;
+    left: 91px;
+}
+
+.hydrangea span:nth-child(2) {
+    top: 20px;
+    left: 43px;
+}
+
+.hydrangea span:nth-child(3) {
+    top: 20px;
+    right: 43px;
+}
+
+.hydrangea span:nth-child(4) {
+    top: 55px;
+    left: 10px;
+}
+
+.hydrangea span:nth-child(5) {
+    top: 52px;
+    left: 68px;
+}
+
+.hydrangea span:nth-child(6) {
+    top: 52px;
+    right: 68px;
+}
+
+.hydrangea span:nth-child(7) {
+    top: 88px;
+    left: 42px;
+}
+
+.hydrangea span:nth-child(8) {
+    top: 90px;
+    left: 91px;
+}
+
+.hydrangea span:nth-child(9) {
+    top: 88px;
+    right: 42px;
+}
+
+.hydrangea span:nth-child(10) {
+    top: 125px;
+    left: 65px;
+}
+
+.hydrangea span:nth-child(11) {
+    top: 125px;
+    right: 65px;
+}
+
+.hydrangea span:nth-child(12) {
+    top: 112px;
+    left: 91px;
+}
+
+
+@keyframes bloom {
+
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   FLOWER MOVEMENT
+========================= */
+
+@keyframes flowerSway {
+
+    0%, 100% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 5px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .message {
+        top: 9%;
+    }
+
+    .message h1 {
+        font-size: 21px;
+    }
+
+    .message p {
+        font-size: 14px;
+    }
+
+    .flower-center {
+        transform:
+            translateX(-50%)
+            scale(.78);
+    }
+
+    .flower-left {
+        left: -7%;
+        transform: scale(.48);
+    }
+
+    .flower-right {
+        right: -7%;
+        transform: scale(.48);
+    }
+
+    .h1 {
+        left: 6%;
+    }
+
+    .h2 {
+        right: 7%;
+    }
+}
