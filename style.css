@@ -1,0 +1,538 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #020711;
+    font-family: Georgia, "Times New Roman", serif;
+    position: relative;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars span {
+    position: absolute;
+    color: #7195c9;
+    font-size: 12px;
+    animation: twinkle 3s infinite alternate;
+}
+
+.stars span:nth-child(1) {
+    top: 12%;
+    left: 15%;
+}
+
+.stars span:nth-child(2) {
+    top: 25%;
+    left: 30%;
+    animation-delay: .8s;
+}
+
+.stars span:nth-child(3) {
+    top: 15%;
+    right: 18%;
+    animation-delay: 1.4s;
+}
+
+.stars span:nth-child(4) {
+    top: 35%;
+    right: 28%;
+    animation-delay: .5s;
+}
+
+.stars span:nth-child(5) {
+    top: 45%;
+    left: 10%;
+    animation-delay: 1.8s;
+}
+
+.stars span:nth-child(6) {
+    top: 30%;
+    right: 8%;
+    animation-delay: 2s;
+}
+
+.stars span:nth-child(7) {
+    top: 10%;
+    left: 50%;
+    animation-delay: 1s;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: .15;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: .9;
+        transform: scale(1.3);
+    }
+}
+
+
+/* =========================
+   OPENING TEXT
+========================= */
+
+.opening {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 700px;
+
+    text-align: center;
+
+    z-index: 20;
+
+    animation: textAppear 2s ease;
+}
+
+.opening h1 {
+    color: #79a1dc;
+
+    font-size: clamp(22px, 3vw, 34px);
+
+    font-weight: normal;
+
+    line-height: 1.5;
+
+    letter-spacing: .5px;
+}
+
+@keyframes textAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+.heart {
+    position: absolute;
+
+    color: #315487;
+
+    z-index: 15;
+
+    animation: heartFloat 4s ease-in-out infinite;
+}
+
+.heart-1 {
+    top: 23%;
+    left: 13%;
+    font-size: 34px;
+}
+
+.heart-2 {
+    top: 16%;
+    right: 18%;
+    font-size: 27px;
+    animation-delay: 1s;
+}
+
+.heart-3 {
+    top: 45%;
+    right: 27%;
+    font-size: 20px;
+    animation-delay: 1.7s;
+}
+
+.heart-4 {
+    top: 48%;
+    left: 24%;
+    font-size: 18px;
+    animation-delay: 2.3s;
+}
+
+@keyframes heartFloat {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: .65;
+    }
+
+    50% {
+        transform: translateY(-18px);
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   FLOWER GARDEN
+========================= */
+
+.garden {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 58%;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   HYDRANGEA
+========================= */
+
+.hydrangea {
+    position: absolute;
+
+    bottom: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: sway 5s ease-in-out infinite;
+}
+
+.hydrangea.main {
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 300px;
+    height: 420px;
+
+    z-index: 10;
+}
+
+.hydrangea.small.left {
+    left: 20%;
+
+    transform: scale(.65);
+
+    width: 260px;
+    height: 380px;
+}
+
+.hydrangea.small.right {
+    right: 20%;
+
+    transform: scale(.65);
+
+    width: 260px;
+    height: 380px;
+
+    animation-delay: 1s;
+}
+
+
+/* =========================
+   STEM
+========================= */
+
+.stem {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 8px;
+    height: 220px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            to right,
+            #102e29,
+            #276052,
+            #102e29
+        );
+
+    transform-origin: bottom;
+
+    animation: growStem 2s ease forwards;
+}
+
+.hydrangea.small .stem {
+    height: 190px;
+}
+
+@keyframes growStem {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+
+/* =========================
+   LEAVES
+========================= */
+
+.leaf {
+    position: absolute;
+
+    width: 85px;
+    height: 42px;
+
+    background: #123d35;
+
+    border-radius: 100% 0 100% 0;
+
+    opacity: .9;
+}
+
+.leaf-left {
+    bottom: 115px;
+    left: 35px;
+
+    transform: rotate(-30deg);
+}
+
+.leaf-right {
+    bottom: 160px;
+    right: 35px;
+
+    transform: rotate(30deg);
+}
+
+
+/* =========================
+   FLOWER HEAD
+========================= */
+
+.flower-head {
+    position: absolute;
+
+    top: 15px;
+
+    width: 210px;
+    height: 180px;
+
+    opacity: 0;
+
+    transform: scale(0);
+
+    animation: bloom 1.8s ease forwards;
+
+    animation-delay: 1.8s;
+}
+
+.hydrangea.small .flower-head {
+    width: 185px;
+    height: 160px;
+}
+
+
+/* =========================
+   HYDRANGEA PETALS
+========================= */
+
+.flower-head::before,
+.flower-head::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #91b9f0 0 17px,
+            transparent 18px
+        ),
+
+        radial-gradient(
+            circle at 25% 35%,
+            #78a5e3 0 18px,
+            transparent 19px
+        ),
+
+        radial-gradient(
+            circle at 75% 35%,
+            #84ade9 0 18px,
+            transparent 19px
+        ),
+
+        radial-gradient(
+            circle at 15% 60%,
+            #6e9bdb 0 18px,
+            transparent 19px
+        ),
+
+        radial-gradient(
+            circle at 50% 55%,
+            #88b1ec 0 19px,
+            transparent 20px
+        ),
+
+        radial-gradient(
+            circle at 85% 60%,
+            #719ddd 0 18px,
+            transparent 19px
+        ),
+
+        radial-gradient(
+            circle at 30% 82%,
+            #79a6e3 0 18px,
+            transparent 19px
+        ),
+
+        radial-gradient(
+            circle at 65% 82%,
+            #8bb5ed 0 18px,
+            transparent 19px
+        );
+}
+
+.flower-head::after {
+    transform: rotate(12deg);
+    opacity: .75;
+}
+
+
+/* =========================
+   BLOOM
+========================= */
+
+@keyframes bloom {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   FLOWER MOVEMENT
+========================= */
+
+@keyframes sway {
+    0%, 100% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 5px;
+    }
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.button-area {
+    position: absolute;
+
+    left: 50%;
+    bottom: 7%;
+
+    transform: translateX(-50%);
+
+    z-index: 30;
+}
+
+.button-area button {
+    padding: 13px 32px;
+
+    background: transparent;
+
+    border: 1px solid #5c86c4;
+
+    border-radius: 30px;
+
+    color: #83a9df;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.button-area button:hover {
+    background: #315487;
+
+    color: white;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .opening {
+        top: 11%;
+    }
+
+    .opening h1 {
+        font-size: 22px;
+    }
+
+    .hydrangea.main {
+        transform:
+            translateX(-50%)
+            scale(.78);
+    }
+
+    .hydrangea.small.left {
+        left: -8%;
+        transform: scale(.48);
+    }
+
+    .hydrangea.small.right {
+        right: -8%;
+        transform: scale(.48);
+    }
+
+    .heart-1 {
+        left: 7%;
+    }
+
+    .heart-2 {
+        right: 7%;
+    }
+
+    .button-area {
+        bottom: 5%;
+    }
+}
