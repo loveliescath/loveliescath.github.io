@@ -537,7 +537,7 @@ z-index: 30;
 }
 
 .button-area button {
-position: relative;
+position: absolute;
 
 ```
 padding: 12px 30px;
